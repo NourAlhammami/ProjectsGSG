@@ -115,17 +115,17 @@
 #
 #
 # # ------------------------------------------------------
-# class Student:
-#     def __init__(self, name, age, no):
-#         self.student_name = name
-#         self.student_age = age
-#         self.student_marks_no = no
-#         self.student_marks = []
-#
-#     def add_mark(self, add):
-#         if len(self.student_marks) < self.student_marks_no:
-#             self.student_marks.append(add)
-#             print(f"marks are {self.student_marks}")
+class Student:
+    def __init__(self, name, age, no):
+        self.student_name = name
+        self.student_age = age
+        self.student_marks_no = no
+        self.student_marks = []
+
+    def add_mark(self, add):
+        if len(self.student_marks) < self.student_marks_no:
+            self.student_marks.append(add)
+            print(f"marks are {self.student_marks}")
 #         else:
 #             print(f"you can not add, marks are {self.student_marks}")
 #
@@ -144,48 +144,48 @@
 
 # ----------------------------------------------------------------------------
 
-import random
-
-
-class Subject:
-    def __init__(self, mark, title):
-        self.mark = mark
-        self.title = title
-
-
-class Student:
-    def __init__(self, name, age):
-        self.id = random.randint(10000, 99999)
-        self.name = name  # لا يمكن وضع input لمدخلات الخصائص أو الباراميترز
-        self.age = age
-        self.student_marks = []
-
-    def add_mark(self):
-        title = input("Enter Subject Title")  # يمكن وضع انبوت للميثود بشرط عدم تعريفها كارجيومينت او باراميتر
-        mark = float(input(f"Enter {title} Mark : "))
-        subject_obj = Subject(mark=mark, title=title)  # عرفنا اوبجيكت من كلاس المارك // ملاحظة يمكن الاستغناء عن mark=
-        self.student_marks.append(
-            subject_obj)  # هنا اصبحت ال Student.marks عبارة عن list of objects مع الملاحظة لا يمكن طباعة هذه الليست
-        # print(self.student_marks)
-
-    def get_student_subjects(self):
-        print("--------Subjects-------")
-        for subject in self.student_marks:
-            print(subject.title)
-        print("_______________________")
-
-    def get_student_average(self):
-        total = 0
-        for subject in self.student_marks:
-            total += subject.mark
-
-        average = total / len(self.student_marks)
-        print(f"Average = {average}")
-
-
-student1 = Student("Nour", 29)
-student1.add_mark()
-student1.add_mark()
-student1.add_mark()
-student1.get_student_subjects()
-student1.get_student_average()
+# import random
+#
+#
+# class Subject:
+#     def __init__(self, mark, title):
+#         self.mark = mark
+#         self.title = title
+#
+#
+# class Student:
+#     def __init__(self, name, age):
+#         self.id = random.randint(10000, 99999)
+#         self.name = name  # لا يمكن وضع input لمدخلات الخصائص أو الباراميترز
+#         self.age = age
+#         self.student_marks = []
+#
+#     def add_mark(self):
+#         title = input("Enter Subject Title")  # يمكن وضع انبوت للميثود بشرط عدم تعريفها كارجيومينت او باراميتر
+#         mark = float(input(f"Enter {title} Mark : "))
+#         subject_obj = Subject(mark=mark, title=title)  # عرفنا اوبجيكت من كلاس المارك // ملاحظة يمكن الاستغناء عن mark=
+#         self.student_marks.append(
+#             subject_obj)  # هنا اصبحت ال Student.marks عبارة عن list of objects مع الملاحظة لا يمكن طباعة هذه الليست
+#         # print(self.student_marks)
+#
+#     def get_student_subjects(self):
+#         print("--------Subjects-------")
+#         for subject in self.student_marks:
+#             print(subject.title)
+#         print("_______________________")
+#
+#     def get_student_average(self):
+#         total = 0
+#         for subject in self.student_marks:
+#             total += subject.mark
+#
+#         average = total / len(self.student_marks)
+#         print(f"Average = {average}")
+#
+#
+# student1 = Student("Nour", 29)
+# student1.add_mark()
+# student1.add_mark()
+# student1.add_mark()
+# student1.get_student_subjects()
+# student1.get_student_average()
